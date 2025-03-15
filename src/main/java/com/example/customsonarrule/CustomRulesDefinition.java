@@ -3,8 +3,6 @@ package com.example.customsonarrule;
 import org.sonar.api.rules.RuleType;
 import org.sonar.api.server.rule.RulesDefinition;
 
-import javax.print.attribute.standard.Severity;
-
 class CustomRulesDefinition implements RulesDefinition {
     private static final String REPOSITORY_KEY = "customjavarules";
 

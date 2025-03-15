@@ -13,20 +13,22 @@
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.sonarsource.api.plugin/sonar-plugin-api -->
         <dependency>
-            <groupId>org.sonarsource.sonarqube</groupId>
+            <groupId>org.sonarsource.api.plugin</groupId>
             <artifactId>sonar-plugin-api</artifactId>
-            <version>9.3.0.51899</version>
-            <scope>provided</scope>
+            <version>11.3.0.2824</version>
         </dependency>
 
+
         <!-- sonar-java-plugin phiên bản mới nhất -->
+        <!-- https://mvnrepository.com/artifact/org.sonarsource.java/sonar-java-plugin -->
         <dependency>
             <groupId>org.sonarsource.java</groupId>
             <artifactId>sonar-java-plugin</artifactId>
-            <version>7.35.0.36271</version>
-            <scope>provided</scope>
+            <version>8.10.0.38194</version>
         </dependency>
+
     </dependencies>
 
     <build>
