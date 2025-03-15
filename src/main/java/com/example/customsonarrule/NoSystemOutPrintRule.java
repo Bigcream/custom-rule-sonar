@@ -2,6 +2,7 @@ package com.example.customsonarrule;
 
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
+import org.sonar.plugins.java.api.semantic.Symbol;
 import org.sonar.plugins.java.api.tree.MethodInvocationTree;
 import org.sonar.plugins.java.api.tree.Tree;
 
@@ -25,10 +26,18 @@ public class NoSystemOutPrintRule extends IssuableSubscriptionVisitor {
     @Override
     public void visitNode(Tree tree) {
         MethodInvocationTree mit = (MethodInvocationTree) tree;
-        if (mit.methodSymbol().name().equals("println") &&
-                mit.methodSymbol().owner().name().equals("out") &&
-                mit.methodSymbol().owner().owner().name().equals("System")) {
-            reportIssue(mit, "Replace System.out.println with a proper logging framework.");
+        Symbol methodSymbol = mit.methodSymbol();
+
+        if (methodSymbol.isMethodSymbol()) {
+            if ("println".equals(methodSymbol.name())) {
+                Symbol owner = methodSymbol.owner();
+                if (owner != null && "out".equals(owner.name())) {
+                    Symbol ownersOwner = owner.owner();
+                    if (ownersOwner != null && "System".equals(ownersOwner.name())) {
+                        reportIssue(mit, "Replace System.out.println with a proper logging framework.");
+                    }
+                }
+            }
         }
     }
 }
