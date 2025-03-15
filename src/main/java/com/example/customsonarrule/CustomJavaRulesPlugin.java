@@ -22,7 +22,7 @@ public class CustomJavaRulesPlugin implements Plugin {
 }
 
 class CustomRulesDefinition implements RulesDefinition {
-    private static final String REPOSITORY_KEY = "custom-java-rules";
+    private static final String REPOSITORY_KEY = "customjavarules";
 
     @Override
     public void define(Context context) {
