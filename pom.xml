@@ -52,7 +52,7 @@
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                         <manifestEntries>
-                            <Plugin-Key>custom-java-rules</Plugin-Key>
+                            <Plugin-Key>customjavarules</Plugin-Key>
                             <Sonar-Plugin-Class>com.example.customsonarrule</Sonar-Plugin-Class>
                             <Plugin-Name>Custom Java Rules Plugin</Plugin-Name>
                             <Plugin-Description>A custom plugin to enforce Java coding rules</Plugin-Description>
