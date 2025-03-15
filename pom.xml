@@ -40,6 +40,28 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            <!-- Thêm maven-jar-plugin để cấu hình MANIFEST.MF -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Plugin-Key>custom-java-rules</Plugin-Key>
+                            <Sonar-Plugin-Class>com.example.customsonarrule</Sonar-Plugin-Class>
+                            <Plugin-Name>Custom Java Rules Plugin</Plugin-Name>
+                            <Plugin-Description>A custom plugin to enforce Java coding rules</Plugin-Description>
+                            <Plugin-Version>${project.version}</Plugin-Version>
+                            <Sonar-Version>10.0</Sonar-Version> <!-- Phiên bản tối thiểu của SonarQube -->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
