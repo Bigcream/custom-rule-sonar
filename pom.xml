@@ -59,7 +59,7 @@
                             <Plugin-Name>Custom Java Rules Plugin</Plugin-Name>
                             <Plugin-Description>A custom plugin to enforce Java coding rules</Plugin-Description>
                             <Plugin-Version>${project.version}</Plugin-Version>
-                            <Sonar-Version>10.0</Sonar-Version> <!-- Phiên bản tối thiểu của SonarQube -->
+                            <Sonar-Version>9.14.0.375</Sonar-Version> <!-- Phiên bản tối thiểu của SonarQube -->
                         </manifestEntries>
                     </archive>
                 </configuration>
