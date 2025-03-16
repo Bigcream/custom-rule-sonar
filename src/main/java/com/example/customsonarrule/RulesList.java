@@ -23,6 +23,7 @@ import com.example.customsonarrule.checks.*;
 import org.sonar.plugins.java.api.JavaCheck;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,7 +43,8 @@ public final class RulesList {
    * These rules are going to target MAIN code only
    */
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
-    return List.of(SpringControllerRequestMappingEntityRule.class,
+    return Collections.unmodifiableList(Arrays.asList(
+            SpringControllerRequestMappingEntityRule.class,
             AvoidAnnotationRule.class,
             AvoidBrandInMethodNamesRule.class,
             AvoidMethodDeclarationRule.class,
@@ -50,13 +52,14 @@ public final class RulesList {
             AvoidTreeListRule.class,
             MyCustomSubscriptionRule.class,
             NoSystemOutPrintRule.class,
-            SecurityAnnotationMandatoryRule.class);
+            SecurityAnnotationMandatoryRule.class));
   }
 
   /**
    * These rules are going to target TEST code only
    */
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {
-    return List.of(NoIfStatementInTestsRule.class);
+    return Collections.unmodifiableList(Arrays.asList(
+            NoIfStatementInTestsRule.class));
   }
 }
