@@ -102,7 +102,7 @@
                 <configuration>
                     <pluginKey>java-custom</pluginKey>
                     <pluginName>Java Custom Rules</pluginName>
-                    <pluginClass>org.sonar.samples.java.MyJavaRulesPlugin</pluginClass>
+                    <pluginClass>com.example.customsonarrule.MyJavaRulesPlugin</pluginClass>
                     <sonarLintSupported>true</sonarLintSupported>
                     <skipDependenciesPackaging>true</skipDependenciesPackaging>
                     <sonarQubeMinVersion>8.9</sonarQubeMinVersion>
